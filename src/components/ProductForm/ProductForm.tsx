@@ -22,6 +22,7 @@ export const ProductForm = ({ addProduct, toggleForm }: Props) => {
           value={name}
           onChange={handleChange}
           minLength={6}
+          maxLength={20}
           required
         />
       </StyledFormLabel>

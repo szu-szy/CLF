@@ -1,6 +1,6 @@
-import { Product } from "@/app/cart/page";
 import { ChangeEvent, useState } from "react";
 import { toast } from "react-toastify";
+import { Product } from "../NewProductList/useNewProductList";
 
 type Data = {
   name: string;
@@ -41,8 +41,10 @@ export const useProductForm = ({ addProduct, toggleForm }: Props): Data => {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    const { name, price } = newProduct;
+
     const isNewProductValid =
-      newProduct.name.length >= 6 && newProduct.price >= 0;
+      name.length >= 6 && name.length <= 20 && price >= 0;
 
     if (!isNewProductValid) {
       toast.error("Please fill all fields");

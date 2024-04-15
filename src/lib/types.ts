@@ -1,4 +1,4 @@
-import { CartProduct } from "@/app/cart/page";
+import { CartProduct } from "@/components/NewProductList/useNewProductList";
 
 export enum SHIPPING_METHOD {
   BIKE = "Bike",
